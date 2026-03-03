@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+    --bg-void: #050505;
+    --cyan: #00F0FF;
+    --amber: #FFB800;
+    --magma: #FF6600;
+
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.1);
+
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    background-color: var(--bg-void);
+    color: #FFFFFF;
+    font-family: var(--font-inter);
+    overflow-x: hidden;
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+/* Glassmorphism card */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    transition: all 0.2s ease;
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Neo-Futurist Animations */
+@keyframes marker-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(var(--pulse-rgb), 0.7);
+    }
+
+    70% {
+        transform: scale(3.5);
+        opacity: 0;
+        box-shadow: 0 0 0 10px rgba(var(--pulse-rgb), 0);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+        box-shadow: 0 0 0 0 rgba(var(--pulse-rgb), 0);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes tickerScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.ticker-track {
+    display: flex;
+    animation: tickerScroll 40s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+}
+
+.ticker-track:hover {
+    animation-play-state: paused;
+}
+
+/* Utilities */
+.text-mono {
+    font-family: var(--font-mono);
+}
+
+.bg-void {
+    background-color: var(--bg-void);
+}
+
+.text-cyan {
+    color: var(--cyan);
+}
+
+.text-amber {
+    color: var(--amber);
+}
+
+.text-magma {
+    color: var(--magma);
+}
