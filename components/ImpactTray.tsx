@@ -8,8 +8,8 @@ function HeartbeatLine() {
     const path = "M0,20 L30,20 L40,5 L50,35 L60,20 L70,20 L80,8 L90,32 L100,20 L130,20 L140,2 L150,38 L160,20 L200,20";
 
     return (
-        <div className="w-full overflow-hidden h-10 relative">
-            <svg width="100%" height="40" viewBox="0 0 200 40" preserveAspectRatio="none" className="opacity-60">
+        <div className="w-full overflow-hidden h-7 relative">
+            <svg width="100%" height="28" viewBox="0 0 200 40" preserveAspectRatio="none" className="opacity-40">
                 <motion.path
                     d={path}
                     fill="none"
@@ -43,7 +43,7 @@ function SilhouetteBar({ label, value, max, color }: { label: string; value: num
                 {blocks.map((_, i) => (
                     <div
                         key={i}
-                        className="h-5 w-2 rounded-sm transition-all duration-500"
+                        className="h-3.5 w-1.5 rounded-sm transition-all duration-500"
                         style={{
                             background: i < count ? color : "rgba(255,255,255,0.05)",
                             opacity: i < count ? (1 - (i / count) * 0.3) : 1,
@@ -59,9 +59,9 @@ export function ImpactTray() {
     const { redMode } = useRedMode();
 
     return (
-        <div className={`glass-card p-4 space-y-4 ${redMode ? "red-mode-border" : ""}`}>
+        <div className={`glass-card p-3 space-y-3 ${redMode ? "red-mode-border" : ""}`}>
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-white/5 pb-3">
+            <div className="flex items-center justify-between border-b border-white/5 pb-2">
                 <div className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-magma animate-pulse" />
                     <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40 font-bold">

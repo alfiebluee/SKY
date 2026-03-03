@@ -22,6 +22,10 @@ export interface Incident {
     media: MediaItem;
     summary: string;
     countdown?: number; // seconds for Take Cover
+    type: string; // e.g. "Ballistic Missile", "Airstrike"
+    infrastructureStatus?: string;
+    governmentStatement?: string;
+    liveFootage?: string; // URL for video
 }
 
 export const MOCK_INCIDENTS: Incident[] = [
@@ -43,6 +47,9 @@ export const MOCK_INCIDENTS: Incident[] = [
         },
         summary: 'Multiple projectiles launched toward northern communities. Red Alert active across 14 towns. Residents advised to take cover immediately.',
         countdown: 45,
+        type: 'Rocket Barrage',
+        infrastructureStatus: 'Power grid fluctuations in Metula; communication lines unstable.',
+        governmentStatement: '"The Home Front Command instructions save lives. Stay in protected areas until further notice."',
     },
     {
         id: 'inc-002',
@@ -61,6 +68,9 @@ export const MOCK_INCIDENTS: Incident[] = [
             src: 'https://images.unsplash.com/photo-1561541178-f46f8f58d24f?w=800&q=80',
         },
         summary: 'Precision strikes on military infrastructure. Civilian evacuation corridors remain open on Route 10.',
+        type: 'Airstrike',
+        infrastructureStatus: 'Localized damage to tunnels and subterranean structures.',
+        governmentStatement: '"Our operations are targeted and precise, aimed at dismantling terror infrastructure while minimizing civilian harm."',
     },
     {
         id: 'inc-003',
@@ -79,6 +89,8 @@ export const MOCK_INCIDENTS: Incident[] = [
             src: 'https://images.unsplash.com/photo-1519529096168-db3a4c6e1765?w=800&q=80',
         },
         summary: 'Iron Dome battery successfully intercepted inbound UAV. No ground impact. All clear issued after 11-minute alert.',
+        type: 'UAV Intrusion',
+        infrastructureStatus: 'No damage reported to essential services.',
     },
     {
         id: 'inc-004',
@@ -97,6 +109,9 @@ export const MOCK_INCIDENTS: Incident[] = [
             src: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80',
         },
         summary: '112 aid trucks cleared for entry. Medical supplies and food for 340,000 people processed. UN escorts confirmed.',
+        type: 'Humanitarian Convoy',
+        infrastructureStatus: 'Kerem Shalom crossing fully operational.',
+        governmentStatement: '"The humanitarian effort continues alongside operational objectives to ensure civilian safety."',
     },
     {
         id: 'inc-005',
@@ -115,6 +130,8 @@ export const MOCK_INCIDENTS: Incident[] = [
             src: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=800&q=80',
         },
         summary: 'Ongoing exchange of heavy fire along the southern perimeter. Multiple structure collapses reported.',
+        type: 'Artillery Exchange',
+        infrastructureStatus: 'Significant damage to residential and commercial sectors in East Rafah.',
     },
     {
         id: 'inc-006',
@@ -133,6 +150,8 @@ export const MOCK_INCIDENTS: Incident[] = [
             src: 'https://images.unsplash.com/photo-1596436893028-44acbba63ea9?w=800&q=80',
         },
         summary: 'Third round of ceasefire talks concluded. Qatar mediators report "positive movement" on phased hostage release framework.',
+        type: 'Diplomatic Update',
+        governmentStatement: '"We remain committed to the return of all hostages through both diplomatic and operational pressure."',
     },
 ];
 
